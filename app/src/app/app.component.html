@@ -1,1 +1,14 @@
+<span>Optimized based on performance</span>
+<input (keyup)="searchQChanged($event)" id="searchQ-input"/>
+
+<app-input></app-input>
+<app-star-icon></app-star-icon>
+<span>Sample 1 </span>
+<p appHighlight>{{"Kaas" | kaas}}</p>
+<span>Sample 2 </span>
+<p>{{b | date:"medium"}}</p>
+<span>Sample 3 </span>
+<p>{{b | date:"long"}}</p>
+<p>{{visibleData}}</p>
+<button (click)="fetchData()">Fetch data!</button>
 <app-my-table [selectedElement]="selectedElementId" (onElementClicked)="printClickedElement($event)"/>

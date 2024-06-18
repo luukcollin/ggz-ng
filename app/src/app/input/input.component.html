@@ -1,6 +1,5 @@
-@if(showLabel) {
-<p>{{label}}<p>
-} 
-@else {
-    <p>{{showLabel}}</p>
-}
+<div class="input-wrapper">
+    <label>{{labelValue}}</label>
+    <input [(ngModel)]="inputValue">
+    <span>Typed text: {{inputValue}}</span>
+</div>
