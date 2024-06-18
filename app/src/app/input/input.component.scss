@@ -1,0 +1,18 @@
+.input-wrapper {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    border: 1px solid transparent;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+app-star-icon {
+    width: 30px;
+}

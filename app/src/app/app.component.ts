@@ -14,7 +14,7 @@ import { BehaviorSubject, debounceTime, pipe } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InputComponent, MyTableComponent, DatePipe, JsonPipe, ShufflePipe, HighlightDirective, StarIconComponent],
+  imports: [RouterOutlet, InputComponent, MyTableComponent, DatePipe, JsonPipe, ShufflePipe, HighlightDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -27,7 +27,7 @@ export class AppComponent {
   constructor(private pokeService: PokeService){
     this.searchQ$.pipe(debounceTime(250)).subscribe((searchQ) => {
       console.log(`actual searchQ ${searchQ}}`)
-      
+
     });
   }
 

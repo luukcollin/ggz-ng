@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TablerowComponent } from '../tablerow/tablerow.component';
 import { TableRow } from '../models/table-row';
+import { makeTableRows, compareRowsByName, compareRowsById } from '../helpers/table-helpers';
 
 type SortOrder = "asc" | "desc";
 interface SortingConfig {
@@ -32,33 +33,9 @@ export class MyTableComponent {
     } else {
       this.rows = this.rows.reverse();
     }
-    
-    //TODO sort rows by columnKey (asc | desc);
   }
 
   onRowClicked(table: TableRow){
     this.onElementClicked.emit(table.id);
   }
-
-}
-function compareRowsByName(a: TableRow, b: TableRow){
-  return a.name > b.name ? 1 : a.name === b.name ? 0 : -1;
-}
-
-function compareRowsById(a: TableRow, b: TableRow){
-  return a.id > b.id ? 1 : a.id === b.id ? 0 : -1;
-}
-
-function makeTableRows(amt: number){
-  const result = [];
-  for(let i = 0; i < amt; i++){
-    const id = i+1;
-    result.push(makeTableRow(id, `Kaas-${id}`))
-  }
-  return result;
-}
-
-function makeTableRow(id: number, name: string): TableRow {
-  const likes = Math.floor(Math.random() * 100);
-  return {id, name, likes}
 }

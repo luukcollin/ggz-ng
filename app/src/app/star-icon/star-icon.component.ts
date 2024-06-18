@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'app-star-icon',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './star-icon.component.scss'
 })
 export class StarIconComponent {
- 
+  @HostBinding("style.fill") get backgroundColor () {
+    if(this.length < 4) return "orange"
+    if(this.length <= 7) return "yellow"
+    return "green"
+  }
+ @Input() length: number = 0;
 }

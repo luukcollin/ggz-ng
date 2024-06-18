@@ -1,5 +1,7 @@
 <div class="input-wrapper">
-    <label>{{labelValue}}</label>
-    <input [(ngModel)]="inputValue">
-    <span>Typed text: {{inputValue}}</span>
+    <app-star-icon [length]="inputValue.length"></app-star-icon>
+    <!-- <label>{{labelValue}}</label> -->
+    <input [(ngModel)]="inputValue" type="password">
+
 </div>
+<span>Typed text: {{inputValue}}</span>
