@@ -1,0 +1,16 @@
+
+    <div class="columns">
+      @for(column of columnNames; track column){
+        <span [class.active]="column === sortingConfig.columnKey" (click)="onColumnClicked(column)">{{column}}</span>
+      }  
+    </div>
+    @for(row of rows; track row.id){
+        <app-tablerow 
+        [class.selected]="selectedElement === row.id" 
+        (click)="onRowClicked(row)" 
+        [row]="row">
+        </app-tablerow>
+    }
+ 
+ 
+  
